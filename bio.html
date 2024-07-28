@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- <script src="script.js"></script> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+
+.mm{
+    
+    margin-left: 60px;
+    margin-right: 60px;
+}
+
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 10%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 18px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop .5s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    color: orangered;
+}
+
+.content {
+    margin-top: 120px;
+    padding: 20px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.home {
+    margin-left: 100px;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 70px 10px;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: .7s;
+}
+
+.home-content h3 span {
+    color: orangered;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 16px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-img {
+    margin-right: 250px;
+    opacity: 0;
+    animation: zoomIn 1s ease forwards;
+    animation-delay: 2s;
+}
+
+.social-media a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid orangered;
+    border-radius: 50%;
+    font-size: 20px;
+    color: orangered;
+    text-decoration: none;
+    margin: 30px 15px 30px 0;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.social-media a:hover {
+    background: orangered;
+    color: gray;
+    box-shadow: 0 0 20px orangered;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: orangered;
+    border-radius: 40px;
+    box-shadow: 0 0 10px orangered;
+    font-size: 16px;
+    color: gray;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    background-color: transparent;
+    color: #fff;
+    box-shadow: none;
+}
+
+section h2 {
+    text-align: center;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    padding: 5px 0;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form label {
+    font-weight: bold;
+}
+
+form input, form textarea {
+    padding: 10px;
+    font-size: 1em;
+}
+
+form button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #333;
+    color: #fff;
+}
+
+    </style>
+</head>
+<body>
+    <div class="mm">
+
+        <header class="header">
+            <a href="" class="logo">Portfolio</a>
+            <nav class="navbar">
+                <a href="" style="--i:1" class="active">Home</a>
+                <a href="#about" style="--i:2">About</a>
+                <a href="#skills" style="--i:3">Skills</a>
+                <a href="" style="--i:4">Portfolio</a>
+                <a href="#contact" style="--i:5">Contact</a>
+            </nav>
+        </header>
+        <section class="home">
+            <div class="home-content">
+                <h3>Hello, It's Me</h3>
+                <h1>Tom Shibu</h1>
+                <h3>And I'm A <span>Frontend Developer</span></h3>
+                <p>"Skilled in creating dynamic and responsive user interfaces, I leverage modern front-end technologies to craft seamless and engaging web experiences."</p>
+                <div class="social-media">
+                    <a href="https://www.facebook.com/tom.shibu.37" style="--i:7"><i class='bx bxl-facebook'></i></a>
+                    <a href="https://www.instagram.com/tom_shibu2889/?next=%2F" style="--i:8"><i class='bx bxl-instagram-alt'></i></a>
+                    <a href="#" style="--i:9"><i class='bx bxl-twitter'></i></a>
+                    <a href="https://www.linkedin.com/in/tom-shibu-a78a21295/" style="--i:10"><i class='bx bxl-linkedin'></i></a>
+                </div>
+                <a href="https://drive.google.com/file/d/1s-qNSjsNktHIIIPjvAoCPFZpQFgUt1KK/view?usp=drive_link" class="btn">Download CV</a>
+            </div>
+            <div class="home-img">
+                <img src="aa.png" alt="" style="height: 400px; width: 400px;">
+            </div>
+        </section>
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I’m Tom Shibu a dedicated Web Developer with over 5 years of experience in crafting dynamic and 
+                responsive websites. My expertise lies in full-stack development, including front-end technologies such as HTML,
+                 CSS, and JavaScript, as well as back-end frameworks like Node.js and Express. I hold a degree in Computer Science 
+                 and have a proven track record of delivering high-quality solutions in various industries. My commitment to coding excellence and
+                 problem-solving drives me to stay ahead of industry trends and continuously enhance my skill set.</p>
+        </section>
+        <section id="skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Communication</li>
+                <li>Risk Management</li>
+                <li>Analytical Skills </li>
+                <li>Work Samples</li>
+            </ul>
+        </section>
+        <section id="contact">
+            <h2>Contact</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </section>
+
+    </div>
+    
+</body>
+</html>
